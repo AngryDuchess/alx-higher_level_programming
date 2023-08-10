@@ -5,4 +5,4 @@ while j < 9:
     while i <= 9:
         print("{:d}{:d}".format(j, i), end=", " if j < 8 else "\n")
         i += 1
-    j += 1  
+    j += 1
