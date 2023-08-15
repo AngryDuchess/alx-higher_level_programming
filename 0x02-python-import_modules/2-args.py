@@ -14,5 +14,4 @@ if __name__ == "__main__":
 
 
     for i in range(arg_length):
-        print("{}: {}".format(i, arguments[i]))
-        i+=1
+        print("{}: {}".format(i + 1, arguments[i]))
