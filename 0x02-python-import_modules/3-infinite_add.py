@@ -9,6 +9,6 @@ if __name__ == "__main__":
     else:
         count = 0
         for arg in arguments:
-          count += int (arg)
+            count += int(arg)
 
         print(count)
