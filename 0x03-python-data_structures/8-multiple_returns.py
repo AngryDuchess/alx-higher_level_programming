@@ -1,4 +1,4 @@
-#!/c/Users/maham/AppData/Local/Microsoft/WindowsApps/python
+#!/usr/bin/python3
 def multiple_returns(sentence):
     tuple_length = len(sentence)
     first = sentence[0]
