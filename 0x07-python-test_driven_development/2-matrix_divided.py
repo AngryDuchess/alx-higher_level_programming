@@ -16,18 +16,15 @@ def matrix_divided(matrix, div):
         Returns:
         new_matrix: a new matrix without changing the old one
         """
+    msg = "matrix must be a matrix (list of lists) of integers/floats"
     if not matrix:
-        raise TypeError("matrix must be a matrix (list of lists) of\
-                integers/floats")
+        raise TypeError(msg)
     if not isinstance(matrix, list):
-        raise TypeError("matrix must be a matrix (list of lists) of\
-                integers/floats")
+        raise TypeError(msg)
     if not all(isinstance(row, list) for row in matrix):
-        raise TypeError("matrix must be a matrix (list of lists) of\
-                integers/floats")
+        raise TypeError(msg)
     if not all(isinstance(i, (int, float)) for row in matrix for i in row):
-        raise TypeError("matrix must be a matrix (list of lists) of\
-                integers/floats")
+        raise TypeError(msg)
 
     first_row_length = len(matrix[0])
     if not isinstance(div, (int, float)):
