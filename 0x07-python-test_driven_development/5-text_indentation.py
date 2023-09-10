@@ -1,4 +1,4 @@
-#!/c/Users/maham/AppData/Local/Microsoft/WindowsApps/python
+#!/usr/bin/python3
 """
     This module contains a function that prints a text passed to it
     and prints two new lines after each of these characters: ., ? and :
