@@ -1,0 +1,44 @@
+=================================
+Test cases for 5-text_indentation
+=================================
+
+This module indents a text passed to it
+
+Usage
+=====
+import module:
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+	>>> text_indentation("Orange. tomatoes? cabbage:")
+	Orange.
+	<BLANKLINE>
+	tomatoes?
+	<BLANKLINE>
+	cabbage:
+
+Other valid test cases
+======================
+	>>> text_indentation("    Holberton    ")
+	Holberton
+
+	>>> text_indentation("    Holberton    .")
+	Holberton.
+
+	>>> text_indentation(".?:")
+	.
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	:
+
+	>>> text_indentation("   \n")
+	
+
+Invalid test cases
+==================
+	>>> text_indentation(5)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+	>>> text_indentation()
+	Traceback (most recent call last):
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
