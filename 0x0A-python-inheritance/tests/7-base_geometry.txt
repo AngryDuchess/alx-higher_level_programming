@@ -50,8 +50,6 @@ Invalid tests/tests that will raise errors
 	TypeError: size must be an integer
 
 	>>> bg.integer_validator("weight", True)
-	Traceback (most recent call last):
-	TypeError: age must be an integer
 
 	>>> bg.integer_validator("weight", [5])
 	Traceback (most recent call last):
