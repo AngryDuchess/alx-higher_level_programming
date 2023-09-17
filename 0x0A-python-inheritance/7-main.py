@@ -3,4 +3,4 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 bg = BaseGeometry()
 
-bg.integer_validator("width")
+bg.integer_validator("age",True)
