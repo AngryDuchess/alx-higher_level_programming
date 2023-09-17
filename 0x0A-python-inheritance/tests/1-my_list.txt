@@ -20,7 +20,33 @@ import module:
 
 Other valid tests
 =================
+	>>> my_list.append(1)
+	>>> my_list.print_sorted()
+	[1, 1, 2, 3, 4, 5]
 
+	>>> my_list.append(-4)
+	>>> my_list.print_sorted()
+	[-4, 1, 1, 2, 3, 4, 5]
+
+	>>> print(my_list)
+	[1, 2, 3, 4, 5, 1, -4]
+
+	>>> my_list1 = MyList()
+	>>> my_list1.append(-10)
+	>>> my_list1.append(-8)
+	>>> my_list1.append(-4)
+	>>> my_list1.append(-6)
+	>>> my_list1.print_sorted()
+	[-10, -8, -6, -4]
+
+	>>> my_list2 = MyList()
+	>>> my_list2.print_sorted()
+	[]
+
+	>>> my_list3 = MyList()
+	>>> my_list3.append("Hello")
+	>>> my_list3.print_sorted()
+	['Hello']
 
 Invalid tests/tests that will raise errors
 ==========================================
