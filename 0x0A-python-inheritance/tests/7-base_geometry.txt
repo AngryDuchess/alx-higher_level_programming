@@ -1,0 +1,30 @@
+============================================================
+Test cases for function integer_validator in 7-base_geometry
+============================================================
+
+This module contains a class BaseGeometry.
+
+Usage
+======
+import module:
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("my_int", 12)
+
+Other valid tests
+=================
+	>>> bg.integer_validator("width", 89)
+
+Invalid tests/tests that will raise errors
+==========================================
+	>>> bg.integer_validator("width", 0)
+	Traceback (most recent call last):
+	ValueError: width must be greater than 0
+
+	>>> bg.integer_validator("size", "small")
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+	>>> bg.integer_validator("size", -19)
+	Traceback (most recent call last):
+	ValueError: size must be greater than 0
