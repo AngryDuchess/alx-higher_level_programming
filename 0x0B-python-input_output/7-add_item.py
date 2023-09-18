@@ -1,4 +1,4 @@
-#!/c/Users/maham/AppData/Local/Microsoft/WindowsApps/python
+#!/usr/bin/python3
 """this script adds all argument to a python list and saves it into a json"""
 import json
 import sys
