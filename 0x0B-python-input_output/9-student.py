@@ -4,7 +4,7 @@
 
 class Student:
     """class for a student"""
-    
+
     def __init__(self, first_name, last_name, age):
         """initializes object and other arguments
         Args:
