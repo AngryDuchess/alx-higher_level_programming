@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """this module contains the test for the base class"""
 import unittest
+import os
 from models.base import Base
 
 

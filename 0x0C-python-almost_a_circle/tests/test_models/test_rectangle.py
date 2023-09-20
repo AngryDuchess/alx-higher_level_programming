@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """this module contains the test for class Rectangle"""
 import unittest
+import os
 from models.base import Base
 from models.rectangle import Rectangle
 
