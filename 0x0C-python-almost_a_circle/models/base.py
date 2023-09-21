@@ -28,8 +28,8 @@ class Base:
         """writes a json string to a file"""
         filename = "{}.json".format(cls.__name__)
         list_dictionaries = []
-        if list_objs is None or list_objs == []:
-            json_string = "[]"
+        if not list_objs:
+            pass
         else:
             for i in range(len(list_objs)):
                 list_dictionaries.append(
