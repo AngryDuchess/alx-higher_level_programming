@@ -62,16 +62,16 @@ class Base:
         dummy_attr.update(**dictionary)
         return dummy_attr
 
-@classmethod
-def load_from_file(cls):
-    """returns a list of instances"""
-    filename = "{}.json".format(cls.__name__)
-    list_of_instances = []
-    if os.path.exists(filename) is False:
-        return []        
-    with open(filename, "r") as f:
-        s = f.read()
-        list_of_dictionaries = cls.from_json_string(s)
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        filename = "{}.json".format(cls.__name__)
+        list_of_instances = []
+        if os.path.exists(filename) is False:
+            return []
+        with open(filename, "r") as f:
+            s = f.read()
+            list_of_dictionaries = cls.from_json_string(s)
         for i in list_of_dictionaries:
-            list_of_instances.append(cls.create(**d))
-    return list_of_instances
+            list_of_instances.append(cls.create(**i))
+        return list_of_instances
