@@ -17,7 +17,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """a getter to retriece the width"""
+        """a getter to retrieve the width"""
         return self.__width
 
     @width.setter
@@ -125,3 +125,11 @@ class Rectangle(Base):
                     self.x = value
                 elif key == "y":
                     self.y = value
+
+    def to_dictionary(self):
+        """returns the dictionary representation"""
+        return {
+            "id": self.id, "width": self.width,
+            "height": self.height, "x": self.x,
+            "y": self.y
+        }
