@@ -39,5 +39,61 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r2.x, 3)
         self.assertEqual(r2.y, 6)
 
+    def test_raise_except(self):
+        """exceptions"""
+        with self.assertRaises(TypeError) as r:
+            r1 = Rectangle("hello", 4, 5, 6, 3)
+        self.assertEqual("width must be an integer", str(r.exception))
+        
+        with self.assertRaises(TypeError) as r:
+            r2 = Rectangle(12, "red")
+        self.assertEqual("height must be an integer", str(r.exception))
+        
+        with self.assertRaises(TypeError) as r:
+            r3 = Rectangle(12, 22, "ret", 43)
+        self.assertEqual("x must be an integer", str(r.exception))
+        
+        with self.assertRaises(TypeError) as r:
+            r4 = Rectangle(12, 1, 4, "fry")
+        self.assertEqual("y must be an integer", str(r.exception))
+
+        with self.assertRaises(ValueError) as r:
+            r1 = Rectangle(-2, 4, 5, 6, 3)
+        self.assertEqual("width must be > 0", str(r.exception))
+
+        with self.assertRaises(ValueError) as r:
+            r1 = Rectangle(2, 0, 5, 6, 3)
+        self.assertEqual("height must be > 0", str(r.exception))
+
+        with self.assertRaises(ValueError) as r:
+            r1 = Rectangle(2, 3, -2, 6, 3)
+        self.assertEqual("x must be >= 0", str(r.exception))
+
+        with self.assertRaises(ValueError) as r:
+            r1 = Rectangle(2, 4, 5, -6, 3)
+        self.assertEqual("y must be >= 0", str(r.exception))
+
+    def test_area(self):
+        """tests the area"""
+        r5 = Rectangle(3, 2)
+        self.assertEqual(r5.area(), 6)
+
+        r6 = Rectangle(3, 2, 0, 0, 9)
+        self.assertEqual(r6.area(), 6)
+
+        """times when errors occur"""
+        with self.assertRaises(ValueError) as r:
+            r7 = Rectangle(-3, 2)
+            r7.area()
+        self.assertEqual( "width must be > 0", str(r.exception))
+
+        with self.assertRaises(ValueError) as r:
+            r8 = Rectangle(3, 0)
+            r8.area()
+        self.assertEqual("height must be > 0", str(r.exception))
+
+    def test_display(self):
+        """test for display function"""
+
 if __name__ == '__main__':
     unittest.main()
