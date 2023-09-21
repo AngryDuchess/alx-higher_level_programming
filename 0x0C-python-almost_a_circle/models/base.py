@@ -28,13 +28,13 @@ class Base:
         """writes a json string to a file"""
         filename = "{}.json".format(cls.__name__)
         list_dictionaries = []
-        if not list_objs:
-            pass
+        if list_objs is None or list_objs == []:
+            json_string = "[]"
         else:
             for i in range(len(list_objs)):
                 list_dictionaries.append(
                     list_objs[i].to_dictionary()
                 )
             json_string = cls.to_json_string(list_dictionaries)
-            with open(filename, "w") as f:
-                f.write(json_string)
+        with open(filename, "w") as f:
+            f.write(json_string)
