@@ -38,3 +38,12 @@ class Base:
             json_string = cls.to_json_string(list_dictionaries)
         with open(filename, "w") as f:
             f.write(json_string)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """takes a json string and returns a list of
+        json string representation"""
+        if json_string is None or json_string == []:
+            return "[]"
+        else:
+            return json.loads(json_string)
