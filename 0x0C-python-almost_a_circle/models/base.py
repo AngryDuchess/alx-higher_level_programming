@@ -29,7 +29,7 @@ class Base:
         filename = "{}.json".format(cls.__name__)
         list_dictionaries = []
         if list_objs is None or list_objs == []:
-            json_string = "[]""
+            json_string = "[]"
         else:
             for i in range(len(list_objs)):
                 list_dictionaries.append(
