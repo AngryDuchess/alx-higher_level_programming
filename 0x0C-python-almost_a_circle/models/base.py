@@ -116,3 +116,44 @@ class Base:
                     n_dict[key] = int(value)
                 list_of_instances.append(cls.create(**n_dict))
         return list_of_instances
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """opens a window and draws all rectangles and squares
+        Args:
+            list_rectangles: rectangles to draw
+            list_squares: squares to draw
+        """
+        import turtle
+        import time
+        from random import randrange
+
+        t = turtle.Turtle()
+        t.speed(2)
+        t.color("black")
+        turtle.bgcolor("white")
+        t.shape("circle")
+        t.pensize(4)
+
+        for i in (list_rectangles + list_squares):
+            t.penup()
+            t.setposition(0, 0)
+            turtle.Screen().colormode(255)
+            t.pencolor((randrange(255), randrange(255), randrange(255)))
+            Base.draw_shape(t, i)
+            time.sleep(1)
+        time.sleep(5)
+
+    @staticmethod
+    def draw_shape(t, shape):
+        """Helper method that draws a Rectangle or Square."""
+        t.penup()
+        t.setpos(shape.x, shape.y)
+        t.pendown()
+        t.forward(shape.width)
+        t.left(90)
+        t.forward(shape.height)
+        t.left(90)
+        t.forward(shape.width)
+        t.left(90)
+        t.forward(shape.height)
