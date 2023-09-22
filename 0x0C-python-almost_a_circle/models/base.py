@@ -2,6 +2,7 @@
 """this module contains the Base class"""
 import json
 import os
+import csv
 
 
 class Base:
@@ -74,4 +75,44 @@ class Base:
             list_of_dictionaries = cls.from_json_string(s)
         for i in list_of_dictionaries:
             list_of_instances.append(cls.create(**i))
+        return list_of_instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """save a csv file"""
+        filename = "{}.csv".format(cls.__name__)
+        list_dictionaries = []
+
+        if list_objs:
+            for obj in list_objs:
+                list_dictionaries.append(obj.to_dictionary())
+
+        with open(filename, "w", newline="") as csvfile:
+            fields = []
+            if cls.__name__ == 'Rectangle':
+                fields = ['id', 'width', 'height', 'x', 'y']
+            elif cls.__name__ == 'Square':
+                fields = ['id', 'size', 'x', 'y']
+
+            writer = csv.DictWriter(
+                csvfile, fieldnames=fields)
+            writer.writeheader()
+            writer.writerows(list_dictionaries)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """deserializing csv"""
+        filename = "{}.csv".format(cls.__name__)
+        list_of_instances = []
+
+        if not os.path.exists(filename):
+            return []
+
+        with open(filename, "r", newline="") as csvfile:
+            reader = csv.DictReader(csvfile)
+            for csv_obj in reader:
+                n_dict = {}
+                for key, value in csv_obj.items():
+                    n_dict[key] = int(value)
+                list_of_instances.append(cls.create(**n_dict))
         return list_of_instances
