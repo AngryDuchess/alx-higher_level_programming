@@ -146,7 +146,7 @@ class Base:
 
     @staticmethod
     def draw_shape(t, shape):
-        """Helper method that draws a Rectangle or Square."""
+        """this method helps draws a Rectangle or Square."""
         t.penup()
         t.setpos(shape.x, shape.y)
         t.pendown()
