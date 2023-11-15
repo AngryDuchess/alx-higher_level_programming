@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const { argv } = require('node:process');
+const { argv } = require('process');
 const num1 = parseInt(argv[2]);
 const num2 = parseInt(argv[3]);
 

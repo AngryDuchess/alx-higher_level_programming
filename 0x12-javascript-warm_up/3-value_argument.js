@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const { argv } = require('node:process');
+const { argv } = require('process');
 let length = 0;
 
 argv.forEach(() => length++);
