@@ -17,6 +17,6 @@ if __name__ == '__main__':
     session = Session()
 
     state_obj = session.query(State).where(State.id == 2).first()
-    state_obj.name = 'New mexico'
+    state_obj.name = 'New Mexico'
     session.commit()
     session.close()
