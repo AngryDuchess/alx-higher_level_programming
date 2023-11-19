@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """
-this module takes an argument and displays all values in
-the states table of the database where name matches the argyment
-but safe from SQL injections this time
+lists all cities associated to a state name passed
+as an argument to the script.
 """
 
 if __name__ == '__main__':
@@ -10,16 +9,19 @@ if __name__ == '__main__':
     from sys import argv
 
     MY_USER, MY_PASS, MY_DB, MY_STATE = argv[1:]
-
     db = MySQLdb.connect(host='localhost', port=3306, user=MY_USER,
                          passwd=MY_PASS, db=MY_DB)
     cursor = db.cursor()
-    command = "SELECT * FROM states WHERE name = %s ORDER BY id"
-
+    command = """SELECT cities.name FROM cities
+              INNER JOIN states ON cities.state_id=states.id
+              WHERE states.name = %s
+              ORDER BY cities.id"""
     cursor.execute(command, (MY_STATE,))
     query = cursor.fetchall()
-    for row in query:
-        print(row)
 
+    found_cities = []
+    for row in query:
+        found_cities.extend(row)
+    print(', '.join(found_cities))
     cursor.close()
     db.close()
