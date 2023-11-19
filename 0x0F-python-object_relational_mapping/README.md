@@ -38,14 +38,14 @@ Test installation
 
 ```
 $ python3
-```
+
 >>> import MySQLdb
 >>> MySQLdb.version_info 
 (2, 0, 3, 'final', 0)
 >>> import sqlalchemy
 >>> sqlalchemy.__version__ 
 '1.4.22'
-
+```
 ## Learning Resources
 
 #### Read or watch:
