@@ -13,7 +13,7 @@ MY_USER, MY_PASS, MY_DB = argv[1:]
 
 engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
                        .format(MY_USER, MY_PASS, MY_DB),
-                               pool_pre_ping=True)
+                       pool_pre_ping=True)
 Base = declarative_base()
 Session = sessionmaker(bind=engine)
 session = Session()
