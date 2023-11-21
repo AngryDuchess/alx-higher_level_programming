@@ -2,7 +2,7 @@
 This project introduces two ways to communicate with your database. One is by using a low-level library that provides
 a straightforward way to interact with MySQL databases using raw SQL queries while still in the python environment called MySQLdb. The other way is by using an ORM, sqlalchemy, which is a higher-level library for python. The ORM allows you to abstract away the details of the underlying database
 
-Here is the installations needed for this project to run on your computer:
+Here are the installations needed for this project to run on your computer:
 1. Install and activate venv
 ```
 $ sudo apt-get install python3.8-venv
