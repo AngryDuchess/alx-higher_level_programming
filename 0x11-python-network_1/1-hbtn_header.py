@@ -3,7 +3,6 @@
 displays the value of the 'X-Request-Id' header
 """
 import urllib.request
-import urllib.response
 import sys
 
 
