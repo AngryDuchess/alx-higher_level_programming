@@ -2,6 +2,8 @@
 """
 looks for the peak in a list of unsorted integers
 """
+
+
 def find_peak(list_of_integers):
     """function to find the peak"""
     if list_of_integers:
